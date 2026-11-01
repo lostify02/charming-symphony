@@ -130,7 +130,7 @@
                     </div>
                 </div>
 
-                <div id="screen-start" class="absolute inset-0 bg-stone-950/90 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center z-20">
+                <div id="screen-start" class="absolute inset-0 bg-stone-950/90 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center z-20 overflow-y-auto [touch-action:pan-y]">
                     <div class="max-w-md w-full bg-amber-950/30 border-2 border-amber-800/60 p-6 sm:p-8 rounded-3xl sketch-border animate-wobble shadow-2xl relative">
 
                         <div class="inline-block p-4 rounded-full bg-amber-900/40 border border-amber-700/50 mb-3">
@@ -153,7 +153,7 @@
                     </div>
                 </div>
 
-                <div id="screen-win" class="absolute inset-0 bg-stone-950/90 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center z-20 hidden">
+                <div id="screen-win" class="absolute inset-0 bg-stone-950/90 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center z-20 hidden overflow-y-auto [touch-action:pan-y]">
                     <div class="max-w-md w-full bg-emerald-950/30 border-2 border-emerald-700/60 p-6 rounded-3xl sketch-border shadow-2xl">
                         <div class="p-4 rounded-full bg-emerald-900/40 border border-emerald-700/50 inline-block mb-3">
                             <i data-lucide="sparkles" class="w-10 h-10 text-emerald-400"></i>
@@ -174,7 +174,7 @@
                     </div>
                 </div>
 
-                <div id="screen-gameover" class="absolute inset-0 bg-stone-950/95 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center z-20 hidden">
+                <div id="screen-gameover" class="absolute inset-0 bg-stone-950/95 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center z-20 hidden overflow-y-auto [touch-action:pan-y]">
                     <div class="max-w-md w-full bg-rose-950/30 border-2 border-rose-700/60 p-6 rounded-3xl sketch-border shadow-2xl">
                         <div class="p-4 rounded-full bg-rose-900/40 border border-rose-700/50 inline-block mb-3">
                             <i data-lucide="hourglass" class="w-10 h-10 text-rose-400"></i>
@@ -195,7 +195,7 @@
                     </div>
                 </div>
 
-                <div id="modal-devlog" class="absolute inset-0 bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center p-4 sm:p-6 text-left z-30 hidden">
+                <div id="modal-devlog" class="absolute inset-0 bg-black/90 backdrop-blur-xl flex flex-col items-center justify-center p-4 sm:p-6 text-left z-30 hidden overflow-y-auto [touch-action:pan-y]">
                     <div class="max-w-lg w-full bg-stone-900 border-2 border-amber-800/60 rounded-3xl p-6 relative sketch-border text-amber-100 max-h-[85vh] overflow-y-auto">
                         <button id="btn-close-devlog" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
                             <i data-lucide="x" class="w-6 h-6"></i>
@@ -673,7 +673,7 @@
             container.innerHTML = '';
             sequence.forEach((nodeId, idx) => {
                 const pill = document.createElement('div');
-                pill.className = `w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center font-bold text-xsfont-mono transition-all duration-300 sketch-border ${
+                pill.className = `w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center font-bold text-xs font-mono transition-all duration-300 sketch-border ${
                     idx < currentSeqIdx
                         ? 'bg-white/10 text-slate-500 line-through border border-white/10'
                         : idx === currentSeqIdx
